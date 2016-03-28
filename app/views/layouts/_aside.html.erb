@@ -1,0 +1,16 @@
+<%= react_component :aside, {
+    asideItems:
+        [{href:   '/',
+          text:   'Home',
+          active: request.path == '/',
+          icon:   {type: 'home'}},
+         {href:   get_started_path,
+          text:   'Get Started',
+          active: active_link?(get_started_path),
+          icon:   {type: 'play'}},
+         {href:      '/#',
+          text:      'Components',
+          icon:      {type: 'cogs'},
+          active:    active_link?('/docs/components'),
+          dropdowns: components}]
+}, {class: 'aside-wrapper'} %>

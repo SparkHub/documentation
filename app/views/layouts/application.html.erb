@@ -22,7 +22,13 @@
   <%= render partial: 'layouts/header' %>
 
   <div class='container well main-section'>
-    <%= yield %>
+    <div class="aside-section">
+      <%= render partial: 'layouts/aside' %>
+    </div>
+
+    <div class="doc-section">
+      <%= yield %>
+    </div>
   </div>
 
   <%= render partial: 'layouts/footer' %>
