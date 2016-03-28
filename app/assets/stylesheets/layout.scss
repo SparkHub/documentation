@@ -1,0 +1,36 @@
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  height: 100%;
+  background-color: #ECECEC;
+}
+
+.doc-nav {
+  margin-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.doc-navbar-brand-wrapper {
+  padding: 0;
+}
+
+.doc-navbar-brand {
+  max-height: 100%;
+}
+
+.main-section {
+  min-height: calc(100% - 151px);
+  margin-bottom: 10px;
+}
+
+.nav-footer {
+  margin-bottom: 0;
+}
+
+.footer-text {
+  padding-top: 15px;
+}

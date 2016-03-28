@@ -1,3 +1,36 @@
 <header>
-  <h2>Header</h2>
+  <%= react_component :header, {
+      brand:     {
+          href:      root_path,
+          className: 'doc-navbar-brand-wrapper',
+          content:   {
+              src:        image_path('logo-white.png'),
+              responsive: true,
+              center:     true,
+              className:  'doc-navbar-brand'
+          }
+      },
+      navbarnav: {
+          content: [{
+                        href: root_path,
+                        text: 'Home',
+                        icon: {type: 'home', size: 'lg'}
+                    },
+                    {
+                        href: '#start',
+                        text: 'Get Started',
+                        icon: {type: 'play'}
+                    },
+                    {
+                        href: '#compoents',
+                        text: 'Components',
+                        icon: {type: 'gears', size: 'lg'}
+                    }, {
+                        target: '_blank',
+                        href:   'https://github.com/SparkHub/gs_react_ui',
+                        text:   'Github',
+                        icon:   {type: 'github', size: 'lg'}
+                    }]
+      }
+  } %>
 </header>
