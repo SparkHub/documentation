@@ -6,7 +6,8 @@
 <blockquote>
   <p>This is a rails engine to help you easily build bootstrap style UI
     components with
-    <%= link_to 'React', 'https://facebook.github.io/react/', target: '_blank' %>.</p>
+    <%= link_to 'React', 'https://facebook.github.io/react/', target: '_blank' %>.
+  </p>
 </blockquote>
 
 <br>
@@ -15,11 +16,48 @@
 <blockquote>
   <ul>
     <li>rails 4.2.0+</li>
-    <li>react-rails 1.6.0+</li>
-    <li>react 0.14.0+</li>
-    <li>react-dom 0.14.0+</li>
+    <li>react-rails 1.6.0+ (react.js and react-dom.js are included in this
+      gem)
+    </li>
     <li>bootstrap 3.3.0+</li>
     <li>jQuery 1.7.0+ (required if need bootstrap jQuery plugins)</li>
     <li>font-awesome 4.5.0+</li>
   </ul>
 </blockquote>
+
+<br>
+
+<h3>Installation</h3>
+
+<p>Add this line to your application's Gemfile:</p>
+<pre>
+  gem 'gs_react_ui'
+</pre>
+<p>And then execute:</p>
+<pre>
+  $ bundle
+</pre>
+<p>Or install it yourself as:</p>
+<pre>
+  gem install gs_react_ui
+</pre>
+
+<blockquote class='text-warning'>
+  bootstrap and font-awesome need installing independently.
+</blockquote>
+
+<p>In application.js, add the following lines:</p>
+<pre>
+  //= require react/react
+  //= require react/react-dom
+  //= require react_ujs
+  //= require gs_react_ui/components
+  * //= require bootstrap (if needed) *
+</pre>
+
+<p>In application.css, add the following lines:</p>
+<pre>
+  *= require bootstrap
+  *= require font-awesome
+  *= require gs_react_ui/application
+</pre>
