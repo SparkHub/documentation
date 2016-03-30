@@ -2,6 +2,92 @@
 
 <hr>
 
-<blockquote>
-  <h5 class='text-warning'>Work in progress...</h5>
-</blockquote>
+<h3>Rendering & mounting components</h3>
+
+<p>
+  <code>react-rails</code> gem is used to help create, render and mount react
+  components. It includes a view helper (<code>react_component</code>) and an
+  unobtrusive JavaScript driver (<code>react_ujs</code>) which work together to
+  put React components on the page.
+</p>
+<br>
+
+<p>
+  The <strong>view helper</strong> puts a <code>div</code> on the page with the
+  requested component class & props. For example:
+</p>
+
+<pre>
+  &lt;%= react_component(:hello_message, {name: 'John'}) %>
+  &lt;!-- becomes: -->
+  &lt;div data-react-class="HelloMessage" data-react-props="{&quot;name&quot;:&quot;John&quot;}">&lt;/div>
+</pre>
+
+<p>
+  On page load, the <code>react_ujs</code> driver will scan the page and mount
+  components using data-react-class and data-react-props.
+</p>
+<br>
+
+<p>
+  The view helper's signature is:
+</p>
+
+<pre>
+  react_component(component_class_name, props={}, html_options={})
+</pre>
+
+<ul>
+  <li>
+    <code>component_class_name</code> is a string which names a
+    globally-accessible component class.
+  </li>
+  <li>
+    <code>props</code> is either an object that responds to
+    <code>#to_json</code> or an already-stringified JSON object (eg, made with
+    Jbuilder).
+  </li>
+  <li>
+    <code>html_options</code> may include:
+    <ol>
+      <li>
+        <code>tag:</code> to use an element other than a <code>div</code> to
+        embed <code>data-react-class</code> and <code>data-react-props</code>.
+      </li>
+      <li>
+        <code>prerender: true</code> to render the component on the server.
+      </li>
+      <li>
+        <code>**other</code> Any other arguments (eg <code>class:</code>,
+        <code>id:</code>) are passed through to <code>content_tag</code>.
+      </li>
+    </ol>
+  </li>
+</ul>
+<br>
+
+<h3>Create components</h3>
+<h4>File structure</h4>
+
+<pre>
+  app
+   |- assets
+     |- javascripts
+       |- components   // create a folder named <code>components</code>, and put components in here
+         |- foo_bar.jsx    // self created react component
+       |- application.js
+       |- components.js  // create a manifest files <code>components.js</code> for components
+</pre>
+
+<p>
+  In <code>components.js</code>, add the following line:
+</p>
+<pre>
+  //= require_tree ./components
+</pre>
+<p>
+  In <code>application.js</code>, require the <code>components.js</code> file:
+</p>
+<pre>
+  //= require components
+</pre>
