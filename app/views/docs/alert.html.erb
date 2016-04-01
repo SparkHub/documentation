@@ -2,6 +2,115 @@
 
 <hr>
 
+<h3>Basic usage</h3>
+
 <blockquote>
-  <h5 class='text-warning'>Work in progress...</h5>
+  <p>
+    &lt;%= react_component(:alert, content: 'Hello World!') %>
+  </p>
 </blockquote>
+
+<%= react_component(:alert, content: 'Hello World!') %>
+
+<br>
+
+<h3>Examples:</h3>
+<h4>Contextual alerts:</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:alert, content: 'Hello World!', context: :success)
+    %>
+  </p>
+  <p>
+    &lt;%= react_component(:alert, content: 'Hello World!', context: :info) %>
+  </p>
+  <p>
+    &lt;%= react_component(:alert, content: 'Hello World!', context: :warning)
+    %>
+  </p>
+  <p>
+    &lt;%= react_component(:alert, content: 'Hello World!', context: :danger) %>
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>
+    &lt;Alert content='Hello World!' context='success'/>
+  </p>
+  <p>
+    &lt;Alert content='Hello World!' context='info'/>
+  </p>
+  <p>
+    &lt;Alert content='Hello World!' context='warning'/>
+  </p>
+  <p>
+    &lt;Alert content='Hello World!' context='success'/>
+  </p>
+
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:alert, content: 'Hello World!', context: :success) %>
+  <%= react_component(:alert, content: 'Hello World!', context: :info) %>
+  <%= react_component(:alert, content: 'Hello World!', context: :warning) %>
+  <%= react_component(:alert, content: 'Hello World!', context: :danger) %>
+</div>
+<br>
+
+<h4>Dismissible alerts</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:alert, content: 'Hello World!', dismiss: true) %>
+  </p>
+</blockquote>
+<blockquote>
+  <p>
+    &lt;Alert content='Hello World!' dismiss=true/>
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:alert, content: 'Hello World!', dismiss: true) %>
+</div>
+
+<br>
+
+<h3>Properties</h3>
+
+<table class='table table-striped'>
+  <thead>
+    <tr class='info'>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>content</code></td>
+      <td>The string will display inside the alert box.</td>
+      <td>String</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code>context</code></td>
+      <td>
+        Alert box background color. Options: <code>success</code>,
+        <code>info</code>, <code>warning</code>, <code>danger</code>
+      </td>
+      <td>String</td>
+      <td><code>info</code></td>
+    </tr>
+    <tr>
+      <td><code>dismiss</code></td>
+      <td>Display the close button.</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+    </tr>
+  </tbody>
+</table>
