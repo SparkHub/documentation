@@ -2,6 +2,127 @@
 
 <hr>
 
+<h3>Basic usage</h3>
+
 <blockquote>
-  <h5 class='text-warning'>Work in progress...</h5>
+  <p>
+    &lt;%= react_component(:image, src: image_path('image')) %>
+  </p>
 </blockquote>
+
+<%= react_component(:image, src: image_path('image')) %>
+
+<br>
+
+<h3>Examples:</h3>
+<h4>Image with different shapes:</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:image, src: image_path('image'), shape: :rounded) %>
+  </p>
+  <p>
+    &lt;%= react_component(:image, src: image_path('image'), shape: :circle) %>
+  </p>
+  <p>
+    &lt;%= react_component(:image, src: image_path('image'), shape: :thumbnail)
+    %>
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>
+    &lt;Image src: 'assets/image.jpg' shape='rounded'/>
+  </p>
+  <p>
+    &lt;Image src: 'assets/image.jpg' shape='circle'/>
+  </p>
+  <p>
+    &lt;Image src: 'assets/image.jpg' shape='thumbnail'/>
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:image, {src: image_path('image'), shape: :rounded}, {tag: :span}) %>
+  <%= react_component(:image, {src: image_path('image'), shape: :circle}, {tag: :span}) %>
+  <%= react_component(:image, {src: image_path('image'), shape: :thumbnail}, {tag: :span}) %>
+</div>
+<br>
+
+<h4>Responsive image:</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:image, src: image_path('image'), responsive: true) %>
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>
+    &lt;Image src: 'assets/image.jpg' responsive=true/>
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:image, src: image_path('image'), responsive: true) %>
+</div>
+<br>
+
+<h4>Centered responsive image:</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:image, src: image_path('image'), responsive: true, center: true) %>
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>
+    &lt;Image src: 'assets/image.jpg' responsive=true, center=true/>
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:image, src: image_path('image'), responsive: true, center: true) %>
+</div>
+<br>
+
+
+<h3>Properties</h3>
+
+<table class='table table-striped'>
+  <thead>
+    <tr class='info'>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>shape</code></td>
+      <td>Image shape. Options: <code>rounded</code>, <code>circle</code>,
+        <code>thumbnail</code></td>
+      <td>String</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code>responsive</code></td>
+      <td>
+        Enable responsive image.
+      </td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code>center</code></td>
+      <td>Center responsive image.</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+    </tr>
+  </tbody>
+</table>
