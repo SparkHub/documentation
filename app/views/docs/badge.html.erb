@@ -2,6 +2,43 @@
 
 <hr>
 
+<h3>Usage</h3>
+
 <blockquote>
-  <h5 class='text-warning'>Work in progress...</h5>
+  <p>
+    &lt;%= react_component(:badge, text: '21') %>
+  </p>
 </blockquote>
+
+<blockquote>
+  <p>
+    &lt;Badge text='21' />
+  </p>
+</blockquote>
+
+<div class="well">
+  <%= react_component(:badge, text: '21') %>
+</div>
+
+<br>
+
+<h3>Properties</h3>
+
+<table class='table table-striped'>
+  <thead>
+    <tr class='info'>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>text</code></td>
+      <td>The string will display inside the badge.</td>
+      <td>String</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>

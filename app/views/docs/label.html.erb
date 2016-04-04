@@ -1,7 +1,108 @@
 <h2>Label</h2>
 
-<hr>
+<h3>Basic usage</h3>
 
 <blockquote>
-  <h5 class='text-warning'>Work in progress...</h5>
+  <p>
+    &lt;%= react_component(:label, text: 'Label') %>
+  </p>
 </blockquote>
+
+<blockquote>
+  <p>
+    &lt;Label text='Label' />
+  </p>
+</blockquote>
+
+<div class="well">
+  <%= react_component(:label, text: 'Label') %>
+</div>
+
+<br>
+
+<h3>Examples:</h3>
+<h4>Contextual labels:</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:label, content: 'Default', context: :default) %>
+  </p>
+  <p>
+    &lt;%= react_component(:label, content: 'Primary', context: :primary) %>
+  </p>
+  <p>
+    &lt;%= react_component(:label, content: 'Success', context: :success) %>
+  </p>
+  <p>
+    &lt;%= react_component(:label, content: 'Info', context: :info) %>
+  </p>
+  <p>
+    &lt;%= react_component(:label, content: 'Warning', context: :waring) %>
+  </p>
+  <p>
+    &lt;%= react_component(:label, content: 'Danger', context: :danger) %>
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>
+    &lt;Label text='Default' context='default'/>
+  </p>
+  <p>
+    &lt;Label text='Primary' context='primary'/>
+  </p>
+  <p>
+    &lt;Label text='Success' context='success'/>
+  </p>
+  <p>
+    &lt;Label text='Info' context='info'/>
+  </p>
+  <p>
+    &lt;Label text='Warning' context='warning'/>
+  </p>
+  <p>
+    &lt;Label text='Danger' context='danger'/>
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:label, text: 'Default', context: :default) %>
+  <%= react_component(:label, text: 'Primary', context: :primary) %>
+  <%= react_component(:label, text: 'Success', context: :success) %>
+  <%= react_component(:label, text: 'Info', context: :info) %>
+  <%= react_component(:label, text: 'Warning', context: :warning) %>
+  <%= react_component(:label, text: 'Danger', context: :danger) %>
+</div>
+<br>
+
+<h3>Properties</h3>
+
+<table class='table table-striped'>
+  <thead>
+    <tr class='info'>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>text</code></td>
+      <td>The string will display inside the badge.</td>
+      <td>String</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code>context</code></td>
+      <td>
+        Alert box background color. Options: <code>default</code>,
+        <code>primary</code>, <code>success</code>, <code>info</code>,
+        <code>warning</code>, <code>danger</code>
+      </td>
+      <td>String</td>
+      <td><code>default</code></td>
+    </tr>
+  </tbody>
+</table>
