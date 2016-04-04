@@ -2,6 +2,23 @@
 
 <hr>
 
+<h3>Basic usage</h3>
+
+<p>
+  Avatar is nothing but an image with a circle shape. Check out
+  <code>Image</code> for details.
+</p>
+
 <blockquote>
-  <h5 class='text-warning'>Work in progress...</h5>
+  <p>
+    &lt;%= react_component(:avatar, src: image_path('image')) %>
+  </p>
 </blockquote>
+
+<blockquote>
+  <p>
+    &lt;Avatar src='assets/image.jpg'>
+  </p>
+</blockquote>
+
+<%= react_component(:avatar, src: image_path('image')) %>
