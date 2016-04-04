@@ -2,6 +2,246 @@
 
 <hr>
 
+<h3>Basic usage</h3>
+
 <blockquote>
-  <h5 class='text-warning'>Work in progress...</h5>
+  <p>
+    &lt;%= react_component(:button, text: 'Button') %>
+  </p>
 </blockquote>
+
+<div class="well">
+  <%= react_component(:button, text: 'Button') %>
+</div>
+
+<br>
+
+<h3>Examples:</h3>
+<h4>Contextual buttons:</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:button, text: 'Default', context: :default) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Primary', context: :primary) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Success', context: :success) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Info', context: :info) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Warning', context: :waring) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Danger', context: :danger) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Link', context: :link) %>
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>
+    &lt;Button text='Default' context='default'/>
+  </p>
+  <p>
+    &lt;Button text='Primary' context='primary'/>
+  </p>
+  <p>
+    &lt;Button text='Success' context='success'/>
+  </p>
+  <p>
+    &lt;Button text='Info' context='info'/>
+  </p>
+  <p>
+    &lt;Button text='Warning' context='warning'/>
+  </p>
+  <p>
+    &lt;Button text='Danger' context='danger'/>
+  </p>
+  <p>
+    &lt;Button text='Link' context='link'/>
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:button, {text: 'Default', context: :default}, {tag: :span}) %>
+  <%= react_component(:button, {text: 'Primary', context: :primary}, {tag: :span}) %>
+  <%= react_component(:button, {text: 'Success', context: :success}, {tag: :span}) %>
+  <%= react_component(:button, {text: 'Info',    context: :info},    {tag: :span}) %>
+  <%= react_component(:button, {text: 'Warning', context: :waring},  {tag: :span}) %>
+  <%= react_component(:button, {text: 'Danger',  context: :danger},  {tag: :span}) %>
+  <%= react_component(:button, {text: 'Link',    context: :link},    {tag: :span}) %>
+</div>
+<br>
+
+<h4>Button with different sizes:</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:button, text: 'Button', context: :primary, size: :xs) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Button', context: :primary, size: :sm) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Button', context: :primary) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Button', context: :primary, size: :lg) %>
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>
+    &lt;Button text='Button' context='primary', size='xs'/>
+  </p>
+  <p>
+    &lt;Button text='Button' context='primary', size='sm'/>
+  </p>
+  <p>
+    &lt;Button text='Button' context='primary'/>
+  </p>
+  <p>
+    &lt;Button text='Button' context='primary', size='lg'/>
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:button, {text: 'Button', context: :primary, size: :xs}, {tag: :span}) %>
+  <%= react_component(:button, {text: 'Button', context: :primary, size: :sm}, {tag: :span}) %>
+  <%= react_component(:button, {text: 'Button', context: :primary},            {tag: :span}) %>
+  <%= react_component(:button, {text: 'Button', context: :primary, size: :lg}, {tag: :span}) %>
+</div>
+<br>
+
+<h4>Button with different states:</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:button, text: 'Button', context: :primary) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Button', context: :primary, state: :active) %>
+  </p>
+  <p>
+    &lt;%= react_component(:button, text: 'Button', context: :primary, state: :disabled) %>
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>
+    &lt;Button text='Button' context='primary'/>
+  </p>
+  <p>
+    &lt;Button text='Button' context='primary', state='active'/>
+  </p>
+  <p>
+    &lt;Button text='Button' context='primary', state='disabled'/>
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:button, {text: 'Button', context: :primary},                   {tag: :span}) %>
+  <%= react_component(:button, {text: 'Button', context: :primary, state: :active},   {tag: :span}) %>
+  <%= react_component(:button, {text: 'Button', context: :primary, state: :disabled}, {tag: :span}) %>
+</div>
+<br>
+
+<h4>Block level button:</h4>
+<blockquote>
+  <p>&lt;div class="row"></p>
+  <p>&nbsp;&nbsp;&lt;div class="col-sm-4"></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= react_component(:button, text: 'Block level button', context: :primary, layout: :block) %></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;%= react_component(:button, text: 'Block level button', context: :info     layout: :block) %></p>
+  <p>&nbsp;&nbsp;&lt;/div></p>
+  <p>&lt;/div></p>
+</blockquote>
+
+<blockquote>
+  <p>&lt;div class="row"></p>
+  <p>&nbsp;&nbsp;&lt;div class="col-sm-4"></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button text='Block level button' context='primary', layout='block'/></p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&lt;Button text='Block level button' context='info', layout='block'/></p>
+  <p>&nbsp;&nbsp;&lt;/div></p>
+  <p>&lt;/div></p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <div class="row">
+    <div class="col-sm-4">
+      <%= react_component(:button, {text: 'Block level button', context: :primary, layout: :block}, {tag: :p}) %>
+      <%= react_component(:button, {text: 'Block level button', context: :info,    layout: :block}, {tag: :p}) %>
+    </div>
+  </div>
+</div>
+<br>
+
+<h3>Properties</h3>
+
+<table class='table table-striped'>
+  <thead>
+    <tr class='info'>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>text</code></td>
+      <td>The string will display inside the button.</td>
+      <td>String</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code>type</code></td>
+      <td>Button type. Options: <code>button</code>, <code>submit</code></td>
+      <td>String</td>
+      <td><code>button</code></td>
+    </tr>
+    <tr>
+      <td><code>context</code></td>
+      <td>
+        Button background color. Options: <code>default</code>,
+        <code>primary</code>, <code>success</code>, <code>info</code>,
+        <code>warning</code>, <code>danger</code>
+      </td>
+      <td>String</td>
+      <td><code>default</code></td>
+    </tr>
+    <tr>
+      <td><code>size</code></td>
+      <td>Button sizes. Options: <code>xs</code>, <code>sm</code>,
+        <code>lg</code>
+      </td>
+      <td>String</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code>state</code></td>
+      <td>
+        Button state. Options: <code>active</code>, <code>disabled</code>
+      </td>
+      <td>String</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code>layout</code></td>
+      <td>
+        Button layout. Options: <code>block</code>
+      </td>
+      <td>String</td>
+      <td>N/A</td>
+    </tr>
+  </tbody>
+</table>

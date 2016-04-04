@@ -67,12 +67,12 @@
 <p>generates the following HTML:</p>
 
 <div class='well'>
-  <%= react_component(:label, text: 'Default', context: :default) %>
-  <%= react_component(:label, text: 'Primary', context: :primary) %>
-  <%= react_component(:label, text: 'Success', context: :success) %>
-  <%= react_component(:label, text: 'Info', context: :info) %>
-  <%= react_component(:label, text: 'Warning', context: :warning) %>
-  <%= react_component(:label, text: 'Danger', context: :danger) %>
+  <%= react_component(:label, {text: 'Default', context: :default}, {tag: :span}) %>
+  <%= react_component(:label, {text: 'Primary', context: :primary}, {tag: :span}) %>
+  <%= react_component(:label, {text: 'Success', context: :success}, {tag: :span}) %>
+  <%= react_component(:label, {text: 'Info',    context: :info},    {tag: :span}) %>
+  <%= react_component(:label, {text: 'Warning', context: :warning}, {tag: :span}) %>
+  <%= react_component(:label, {text: 'Danger',  context: :danger},  {tag: :span}) %>
 </div>
 <br>
 
@@ -97,7 +97,7 @@
     <tr>
       <td><code>context</code></td>
       <td>
-        Alert box background color. Options: <code>default</code>,
+        Label background color. Options: <code>default</code>,
         <code>primary</code>, <code>success</code>, <code>info</code>,
         <code>warning</code>, <code>danger</code>
       </td>
