@@ -2,6 +2,350 @@
 
 <hr>
 
+<h3>Basic usage</h3>
+
 <blockquote>
-  <h5 class='text-warning'>Work in progress...</h5>
+  <p>
+    &lt;%= react_component(:icon, type: :home) %>
+  </p>
 </blockquote>
+
+<blockquote>
+  <p>
+    &lt;Icon type='home' />
+  </p>
+</blockquote>
+
+<div class="well">
+  <%= react_component(:icon, type: :home) %>
+</div>
+
+<h3>Examples:</h3>
+<h4>Icon with different sizes:</h4>
+<blockquote>
+  <p>
+    &lt;%= react_component(:icon, type: :home, size: '1x') %>
+  </p>
+  <p>
+    &lt;%= react_component(:icon, type: :home, size: 'lg') %>
+  </p>
+  <p>
+    &lt;%= react_component(:icon, type: :home, size: '2x') %>
+  </p>
+  <p>
+    &lt;%= react_component(:icon, type: :home, size: '3x') %>
+  </p>
+  <p>
+    &lt;%= react_component(:icon, type: :home, size: '4x') %>
+  </p>
+  <p>
+    &lt;%= react_component(:icon, type: :home, size: '5x') %>
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>
+    &lt;Icon type='home' size='1x'/>
+  </p>
+  <p>
+    &lt;Icon type='home' size='lg'/>
+  </p>
+  <p>
+    &lt;Icon type='home' size='2x'/>
+  </p>
+  <p>
+    &lt;Icon type='home' size='3x'/>
+  </p>
+  <p>
+    &lt;Icon type='home' size='4x'/>
+  </p>
+  <p>
+    &lt;Icon type='home' size='5x'/>
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <%= react_component(:icon, {type: :home, size: '1x'}, {tag: :span}) %>
+  <%= react_component(:icon, {type: :home, size: 'lg'}, {tag: :span}) %>
+  <%= react_component(:icon, {type: :home, size: '2x'}, {tag: :span}) %>
+  <%= react_component(:icon, {type: :home, size: '3x'}, {tag: :span}) %>
+  <%= react_component(:icon, {type: :home, size: '4x'}, {tag: :span}) %>
+  <%= react_component(:icon, {type: :home, size: '5x'}, {tag: :span}) %>
+</div>
+<br>
+
+<h4>Fixed width icons:</h4>
+<blockquote>
+  <p>&lt;div class="list-group"></p>
+  <p>&nbsp; &lt;a class="list-group-item" href="#">&lt%= react_component(:icon, {type: :home, fixedWidth: true}, {tag: :i}) %>&nbsp; Home&lt;/a></p>
+  <p>&nbsp; &lt;a class="list-group-item" href="#">&lt%= react_component(:icon, {type: :book, fixedWidth: true}, {tag: :i}) %>&nbsp; Library&lt;/a></p>
+  <p>&nbsp; &lt;a class="list-group-item" href="#">&lt%= react_component(:icon, {type: :cog, fixedWidth: true}, {tag: :i}) %>&nbsp; Settings&lt;/a></p>
+  <p>&lt;/div></p>
+</blockquote>
+
+<blockquote>
+  <p>&lt;div className="list-group"></p>
+  <p>&nbsp; &lt;a className="list-group-item" href="#">&lt;Icon type='home' fixedWidth=true>&nbsp; Home&lt;/a></p>
+  <p>&nbsp; &lt;a className="list-group-item" href="#">&lt;Icon type='book' fixedWidth=true>&nbsp; Library&lt;/a></p>
+  <p>&nbsp; &lt;a className="list-group-item" href="#">&lt;Icon type='cog' fixedWidth=true>&nbsp; Settings&lt;/a></p>
+  <p>&lt;/div></p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <div class="list-group">
+    <a class="list-group-item" href="#"><%= react_component(:icon, {type: :home, fixedWidth: true}, {tag: :i}) %>&nbsp; Home</a>
+    <a class="list-group-item" href="#"><%= react_component(:icon, {type: :book, fixedWidth: true}, {tag: :i}) %>&nbsp; Library</a>
+    <a class="list-group-item" href="#"><%= react_component(:icon, {type: :cog, fixedWidth: true}, {tag: :i}) %>&nbsp; Settings</a>
+  </div>
+</div>
+<br>
+
+<h4>List icons:</h4>
+<blockquote>
+  <p>&lt;ul class="fa-ul"></p>
+  <p>&nbsp; &lt;li>&lt%= react_component(:icon, {type: :home, listItem: true}, {tag: :i})Home&lt;/li></p>
+  <p>&nbsp; &lt;li>&lt%= react_component(:icon, {type: :book, listItem: true}, {tag: :i})Library&lt;/li></p>
+  <p>&nbsp; &lt;li>&lt%= react_component(:icon, {type: :cog, listItem: true}, {tag: :i})Settings&lt;/li></p>
+  <p>&lt;/ul></p>
+</blockquote>
+
+<blockquote>
+  <p>&lt;ul className="fa-ul"></p>
+  <p>&nbsp; &lt;li>&lt;Icon type='home' fixedWidth=true>Home&lt;/li></p>
+  <p>&nbsp; &lt;li>&lt;Icon type='book' fixedWidth=true>Library&lt;/li></p>
+  <p>&nbsp; &lt;li>&lt;Icon type='cog' fixedWidth=true>&Settings&lt;/li></p>
+  <p>&lt;/ul></p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <ul class="fa-ul">
+    <li><%= react_component(:icon, {type: :home, listItem: true}, {tag: :i}) %>Home</li>
+    <li><%= react_component(:icon, {type: :book, listItem: true}, {tag: :i}) %>Library</li>
+    <li><%= react_component(:icon, {type: :cog, listItem: true}, {tag: :i}) %>Settings</li>
+  </ul>
+</div>
+<br>
+
+<h4>Inverse Icon:</h4>
+<blockquote>
+  <p>&lt%= react_component(:icon, type: :home, inverse: true) %></p>
+</blockquote>
+
+<blockquote>
+  <p>&lt;ul className="fa-ul"></p>
+  <p>&nbsp; &lt;li>&lt;Icon type='home' fixedWidth=true>Home&lt;/li></p>
+  <p>&nbsp; &lt;li>&lt;Icon type='book' fixedWidth=true>Library&lt;/li></p>
+  <p>&nbsp; &lt;li>&lt;Icon type='cog' fixedWidth=true>&Settings&lt;/li></p>
+  <p>&lt;/ul></p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <p>
+    <%= react_component(:icon, {type: :home, inverse: true, size: 'lg'}, {class: 'label label-success'}) %>
+  </p>
+</div>
+<br>
+
+<h4>Animated Icon:</h4>
+<blockquote>
+  <p>&lt%= react_component(:icon, type: :spinner, animation: 'spin') %></p>
+  <p>&lt%= react_component(:icon, type: :spinner, animation: 'pulse') %></p>
+</blockquote>
+
+<blockquote>
+  <p>&ltIcon type='spinner' animation='spin'/></p>
+  <p>&ltIcon type='spinner' animation='pulse'/></p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <p><%= react_component(:icon, type: :spinner, size: '3x', animation: 'spin') %></p>
+  <p><%= react_component(:icon, type: :spinner, size: '3x', animation: 'pulse') %></p>
+</div>
+<br>
+
+<h4>Rotated Icon:</h4>
+<blockquote>
+  <p>&lt%= react_component(:icon, type: :shield) %></p>
+  <p>&lt%= react_component(:icon, type: :shield, rotate: '90') %></p>
+  <p>&lt%= react_component(:icon, type: :shield, rotate: '180') %></p>
+  <p>&lt%= react_component(:icon, type: :shield, rotate: '270') %></p>
+</blockquote>
+
+<blockquote>
+  <p>&ltIcon type='shield'/></p>
+  <p>&ltIcon type='shield' rotate='90'/></p>
+  <p>&ltIcon type='shield' rotate='180'/></p>
+  <p>&ltIcon type='shield' rotate='270'/></p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <p>
+    <%= react_component(:icon, {type: :shield, size: '2x'}, {tag: :span}) %>
+    <%= react_component(:icon, {type: :shield, size: '2x', rotate: '90'}, {tag: :span}) %>
+    <%= react_component(:icon, {type: :shield, size: '2x', rotate: '180'}, {tag: :span}) %>
+    <%= react_component(:icon, {type: :shield, size: '2x', rotate: '270'}, {tag: :span}) %>
+  </p>
+</div>
+<br>
+
+<h4>Flipped Icon:</h4>
+<blockquote>
+  <p>&lt%= react_component(:icon, type: :shield) %></p>
+  <p>&lt%= react_component(:icon, type: :shield, flip: 'horizontal') %></p>
+  <p>&lt%= react_component(:icon, type: :shield, flip: 'vertical') %></p>
+</blockquote>
+
+<blockquote>
+  <p>&ltIcon type='shield'/></p>
+  <p>&ltIcon type='shield' flip='horizontal'/></p>
+  <p>&ltIcon type='shield' flip='vertical'/></p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <p>
+    <%= react_component(:icon, {type: :shield, size: '2x'}, {tag: :span}) %>
+    <%= react_component(:icon, {type: :shield, size: '2x', flip: 'horizontal'}, {tag: :span}) %>
+    <%= react_component(:icon, {type: :shield, size: '2x', flip: 'vertical'}, {tag: :span}) %>
+  </p>
+</div>
+<br>
+
+<h4>Bordered & Pulled Icon:</h4>
+<blockquote>
+  <p>
+    &lt%= react_component(:icon, type: 'quote-left', border: true, pull: 'left')
+    %>
+    ...tomorrow we will run faster, stretch out our arms farther...
+    And then one fine morning— So we beat on, boats against the
+    current, borne back ceaselessly into the past.
+  </p>
+</blockquote>
+
+<blockquote>
+  <p>&ltIcon type='quote-left', border=true, pull='left'/></p>
+  <p>
+    ...tomorrow we will run faster, stretch out our arms farther...
+    And then one fine morning— So we beat on, boats against the
+    current, borne back ceaselessly into the past.
+  </p>
+</blockquote>
+
+<p>generates the following HTML:</p>
+
+<div class='well'>
+  <div class="row">
+    <div class="col-sm-3">
+      <p>
+        <%= react_component(:icon, type: 'quote-left', size: '2x', border: true, pull: 'left') %>
+        ...tomorrow we will run faster, stretch out our arms farther...
+        And then one fine morning— So we beat on, boats against the
+        current, borne back ceaselessly into the past.
+      </p>
+    </div>
+  </div>
+</div>
+<br>
+
+<h3>Properties</h3>
+
+<table class='table table-striped'>
+  <thead>
+    <tr class='info'>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>type</code></td>
+      <td>Icon type. Required property.</td>
+      <td>String</td>
+      <td>N/A</td>
+    </tr>
+    <tr>
+      <td><code>size</code></td>
+      <td>
+        Icon size. Options: <code>1x</code>, <code>lg</code>, <code>2x</code>,
+        <code>3x</code>, <code>4x</code>, <code>5x</code>.
+      </td>
+      <td>String</td>
+      <td><code>1x</code></td>
+    </tr>
+    <tr>
+      <td><code>fixedWidth</code></td>
+      <td>Icon with fixed width.</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code>listItem</code></td>
+      <td>Listed icon.</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code>border</code></td>
+      <td>Add borders to the icon.</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code>inverse</code></td>
+      <td>Icon base color inverse.</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td><code>pull</code></td>
+      <td>
+        Pull icon to left or right. Options: <code>left</code> and
+        <code>right</code>
+      </td>
+      <td>String</td>
+      <td><code>N/A</code></td>
+    </tr>
+    <tr>
+      <td><code>animation</code></td>
+      <td>
+        Enable icon animation. Options: <code>spin</code> and
+        <code>pulse</code>
+      </td>
+      <td>String</td>
+      <td><code>N/A</code></td>
+    </tr>
+    <tr>
+      <td><code>rotate</code></td>
+      <td>
+        Rotate the icon. Options: <code>90</code>, <code>180</code> and
+        <code>270</code>
+      </td>
+      <td>String</td>
+      <td><code>N/A</code></td>
+    </tr>
+    <tr>
+      <td><code>flip</code></td>
+      <td>
+        Flip the icon. Options: <code>horizontal</code> and
+        <code>vertical</code>
+      </td>
+      <td>String</td>
+      <td><code>N/A</code></td>
+    </tr>
+  </tbody>
+</table>
