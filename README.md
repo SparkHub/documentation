@@ -1,4 +1,4 @@
-# Documentation for GuideSpark Open Source Projects
+# Documentation for gs_react_ui
 
 ## Requirement
   * ruby 2.3.0
