@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/SparkHub/gs_react_ui.git
-  revision: 25d72c8c3d3a07a747709e64729150ab9e87dec2
+  revision: 8d0043d4bb6495ca718e4de163522302ffa2365d
   specs:
     gs_react_ui (0.0.1)
       rails (~> 4.2.0)
@@ -101,7 +101,7 @@ GEM
       activesupport (= 4.2.6)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (11.1.1)
+    rake (11.1.2)
     react-rails (1.6.2)
       babel-transpiler (>= 0.7.0)
       coffee-script-source (~> 1.8)
